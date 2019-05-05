@@ -104,6 +104,7 @@ class ConsoleParser:
 			self.onCommResign  : re.compile ('SGame: (\S+) has resigned as commander.'),
 			self.onMapReset    : re.compile ('.*\d+\.\d+\s{3, 6}'),
 			# custom filters
+			self.onPlaceBuilding : re.compile ('Sv: Place building: (\S+) at (\S+) (\S+) (\S+)'), 
 			self.onItemTransaction : re.compile ('Sv: ITEM: Client (\d+) (\S+) (.*)'),
 			self.onRefresh : re.compile ('^refresh'),
 			self.onRefreshTeams : re.compile ('CLIENT (\d+) is on TEAM (\d+)'),
@@ -194,6 +195,11 @@ class ConsoleParser:
 		pass
 	def onMapReset(self, *args, **kwargs):
 		print("SHUFFLE HAS BEEN CALLED, now DO SOMETHING")
+		pass
+	def onPlaceBuilding(self, *args, **kwargs):
+		#f = open("/tmp/sav2game.log", "a+");
+		#f.write();
+		#f.close();
 		pass
 
 		
